@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+</head>
+<style>
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        width: 100vw; height: 100vh;
+        background-color: #cdcdcd;
+        background-size: cover;
+        z-index: 0;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        filter: none;
+        position: relative;
+    
+    }
+    .blur-bg {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        width: 100vw; height: 100vh;
+        background: inherit;
+        filter: blur(8px) brightness(0.7);
+        z-index: 0;
+    }
+    .resume-container {
+        position: relative;
+        z-index: 1;
+        max-width: 80%;
+        max-height: auto;
+        margin: 60px auto;
+        background: rgba(255,255,255,0.92);
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        padding: 40px 32px;
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .resume-header {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .resume-header h1 {
+        margin: 0;
+        font-size: 2.2em;
+        letter-spacing: 1px;
+    }
+    .resume-header p {
+        margin: 4px 0 0 0;
+        color: #555;
+        font-size: 1.1em;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    .section-title {
+        font-weight: 600;
+        color: #2d3a4a;
+        margin-bottom: 8px;
+        font-size: 1.15em;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 2px;
+    }
+    .section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .section li {
+        margin-bottom: 8px;
+    }
+    .edu-degree, .exp-role {
+        font-weight: 500;
+    }
+    .edu-school, .exp-company {
+        color: #555;
+        font-size: 0.98em;
+    }
+    .exp-dates, .edu-dates {
+        float: right;
+        color: #888;
+        font-size: 0.95em;
+    }
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .skill {
+        background: #e3eafc;
+        color: #2d3a4a;
+        border-radius: 12px;
+        padding: 4px 12px;
+        font-size: 0.98em;
+    }
+</style>
+<body>
+    <div class="blur-bg"></div>
+    <div class="resume-container">
+        <div class="resume-header">
+            <h1>Stefan Juganu</h1>
+            <p>Software Engineer &bull; StefanJ21SWE@gmail.com &bull; (747)-239-7380 </p>
+            <p>Woodland Hills, Los Angeles, CA</p>
+        </div>
+        <div class="section">
+            <div class="section-title"> Profile Summary</div>
+            <p>Results-driven aspiring Software Engineer with a strong focus on backend development and full-stack web applications; Specializing in building and deploying scalable applications and intuitive user interfaces. 
+                Experienced in building web applications from the ground up using Django, JavaScript, HTML, and CSS; connected to MySQL/Postgres Databases, actively deployed on Render. Actively exploring AI systems 
+                integration and modern frameworks to bridge the skill gap between academic knowledge and industry standards.</p>
+        </div>
+        <div class="section">
+            <div class="section-title">Experience</div>
+            <ul>
+                <li>
+                    <span class="exp-role">Django Forum Platform</span> <span class="exp-company">@ Django / MySQL / HTML/JS/CSS</span>
+                    <span class="exp-dates">2025 - Present</span>
+                    <br>
+                    <small>Developed a full-stack forum application to learn Software, APIs, scalability, and workflow environment. This application implies 
+                        user authentication, profile management, post creation, commenting, user-to-user interaction, and real-time updates. The backend is built using Django, with a MySQL database for data storage. The frontend is designed with HTML, CSS, and JavaScript to ensure a responsive and user-friendly interface.
+                        Deployed the application on Render to ensure accessibility and scalability. This project demonstrates my ability to create comprehensive web applications from scratch, integrating both backend and frontend technologies effectively.</small>
+                    </small>
+                    <hr style="opacity: 0.35;">
+                    <small style="font-size: 0.8rem;">
+                    <b>Live Demo on Render:</b> <a href="https://BackendForums.onrender.com" target="_blank">https://BackendForums.onrender.com</a>
+                    </small>
+                    <br>
+                    <small> <b>User:</b> demouser | <b>Password:</b> demopassword</small>
+                    <br>
+                    <b style="font-size:0.8rem;">Private Repo (Code available on request)</b>
+                    <br>
+                    <small style="font-size: 0.7rem;">
+                    Source Code on GitHub: <a href="https://github.com/StefanJ20/Django" target="_blank">Source Code</a>
+                    </small>
+                    <br>
+                    <small style="font-size: 0.8rem;">My GitHub: <a href="https://github.com/StefanJ20" target="_blank">StefanJ20</a></small>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="section-title">Education</div>
+            <ul>
+                <li>
+                    <span class="edu-degree">B.S. in Computer Science (GPA - 3.6)</span> <span class="edu-school">@ California State University of Northridge</span>
+                    <span class="edu-dates">2023 - Present</span>
+                    <br>
+                    <br>
+                    <small>
+                        <b>Expected Graduation:</b> Spring 2027
+                        <br>
+                        <b>Additional Info:</b> Coursework includes Data Structures, Cybersecurity, Algorithms, Probability & Statistics, Shell Programming. Database Systems and Web Development self-taught. Actively involved in coding clubs and collaborative projects. Open to internships and research opportunities. Focused on backend development, full-stack web/mobile applications, and AI integration.
+                    </small>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="section-title">Clubs & Organizations</div>
+            <ul>
+                <li>
+                    <b>CSUN Layer 8</b> &mdash; Active Member <span style="color: #888; font-size: 0.8rem;">(Fall 2024 - Present)</span>
+                    <br>
+                    <small>
+                        Attend seminars and hands-on labs focused on ethical hacking, network security, cybersecurity practices, and database administration safety. Collaborate on Capture The Flag (CTF) competitions. Gave presentations on Web Development and safety.
+                    </small>
+                </li>
+                <li>
+                    <b>SoSE CSUN</b> &mdash; New Member <span style="color: #888; font-size: 0.8rem;">(Fall 2025 - Present)</span>
+                    <br>
+                    <small>
+                        Working together with peers to evaluate projects, share knowledge, and prepare for technical interviews. Focus on full-stack web development, algorithms, and data structures.
+                    </small>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="section-title">Skills</div>
+            <div class="skills-list">
+                <span class="skill">Python</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">Django</span>
+                <span class="skill">MySQL</span>
+                <span class="skill">PostgreSQL</span>
+                <span class="skill">Git</span>
+                <span class="skill">HTML/CSS</span>
+                <span class="skill">REST APIs</span>
+                <span class="skill">Cloudinary</span>
+                <span class="skill">Render</span>
+                <span class="skill">Debugging</span>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Future Growth & AI Focus</div>
+            <ul style="font-size: 0.8rem;">
+                <li>
+                    <b>Advance Backend Expertise:</b> Deepen knowledge in scalable backend systems, learning Node.js, focusing on Django REST Framework, microservices, and cloud-native architectures.
+                </li>
+                <li>
+                    <b>AI & Machine Learning Integration:</b> Actively learning to integrate APIs (OpenAI, Gemini, Perplexity) and exploring Python AI/ML libraries to build intelligent, data-driven applications.
+                </li>
+                <li>
+                    <b>DevOps & Deployment:</b> Building proficiency in DevOps tools — Docker, Kubernetes, and CI/CD pipelines — to support scalable deployments and high-availability systems.
+                </li>
+            </ul>
+            <hr style="opacity: 0.35;">
+            <div class="section-title">Skills In Progress</div>
+            <div class="skills-list">
+                <span class="skill">React</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">OAuth</span>
+                <span class="skill">LangChain</span>
+                <span class="skill">FastAPI</span>
+                <span class="skill">OpenAI API</span>
+                <span class="skill">Docker / Docker Compose</span>
+                <span class="skill">Kubernetes</span>
+                <span class="skill">Plaid API</span>
+                <span class="skill">Azure / AWS</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
