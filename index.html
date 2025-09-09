@@ -8,28 +8,43 @@
 <style>
 
     @media print {
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+      @page {
+        size: Letter;        
+        margin: 0.35in;       
+      }
 
-        body {
-            page-break-before: avoid;
-            page-break-after: avoid;
-            page-break-inside: avoid;
-        }
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 8.5in;              
+        min-height: 11in;            
+        -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+      }
 
-        * {
-            page-break-inside: avoid !important;
-        }
+      #resume {
+        transform: scale(0.94);
+        transform-origin: top left;
+        width: 8.5in;              
+      }
 
-        @page {
-            size: A4;  
-            margin: 0;    
-        }
+      * {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      h1, h2, h3 { margin: 0 0 6px !important; line-height: 1.15; }
+      p, li      { margin: 0 0 4px !important; line-height: 1.25; }
+      section    { margin: 0 0 8px !important; }
+      ul         { padding-left: 16px !important; }
+
+      .card, .shadow, .elev, .container { box-shadow: none !important; }
+      .sticky, .fixed, header, footer    { position: static !important; }
+
+      .row, .grid {
+        align-items: flex-start !important;
+      }
     }
-
 
     body::before {
         content: "";
@@ -137,9 +152,13 @@
         </div>
         <div class="section">
             <div class="section-title"> Profile Summary</div>
-            <p>Results-driven aspiring Software Engineer with a strong focus on backend development and full-stack web applications; Specializing in building and deploying scalable applications and intuitive user interfaces. 
-                Experienced in building web applications from the ground up using Django, JavaScript, HTML, and CSS; connected to MySQL/Postgres Databases, actively deployed on Render. Actively exploring AI systems 
-                integration and modern frameworks to bridge the skill gap between academic knowledge and industry standards.</p>
+            <ul>
+                <li>• Aspiring <strong>Software Engineer</strong> specializing in backend and full-stack web applications.</li>
+                <li>• Build applications from scratch with <strong>Django</strong>, <strong>JavaScript</strong>, <strong>HTML</strong>, and <strong>CSS</strong>.</li>
+                <li>• Integrates <strong>MySQL</strong>/<strong>Postgres</strong> databases and deploys to <strong>Render</strong>.</li>
+                <li>• Delivers <strong>scalable</strong> applications with intuitive user interfaces.</li>
+                <li>• Exploring <strong>AI systems integration</strong> and modern frameworks to bridge academic–industry skills.</li>
+            </ul>
         </div>
         <div class="section">
             <div class="section-title">Experience</div>
