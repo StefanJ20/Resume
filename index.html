@@ -8,43 +8,54 @@
 <style>
 
     @media print {
-      @page {
-        size: Letter;        
-        margin: 0.35in;       
+      /* Paper */
+      @page { 
+        size: Letter;          /* change to A4 if needed */
+        margin: 0.35in;
       }
-
+  
+      /* Reset screen-only layout that causes extra pages */
       html, body {
-        margin: 0;
-        padding: 0;
-        width: 8.5in;              
-        min-height: 11in;            
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+        height: auto !important;
+      }
+      body {
+        min-height: auto !important;          /* undo min-height:100vh */
+        background: #cdcdcd !important;       /* gray page background */
         -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+        /* DO NOT use flex here; it can create an empty first page */
       }
-
-      #resume {
-        transform: scale(0.94);
-        transform-origin: top left;
-        width: 8.5in;              
+  
+      /* Hide the screen background layers on print */
+      body::before, .blur-bg { display: none !important; }
+  
+      /* Recompute layout smaller so it fits one sheet */
+      html { zoom: 0.7; }                    /* tweak 0.90 → 0.88/0.86 if needed */
+  
+      /* The resume "card" */
+      .resume-container {
+        width: 7.8in;                         /* 8.5 - (0.35*2) = 7.8in printable */
+        max-width: none !important;
+        margin: 0 auto !important;            /* center horizontally */
+        padding: 0.30in 0.30in;
+        box-shadow: none !important;
+        background: #fff !important;
+        break-before: avoid !important;       /* prevent blank first page */
+        page-break-before: avoid !important;
       }
-
-      * {
-        break-inside: avoid !important;
-        page-break-inside: avoid !important;
-      }
-
-      h1, h2, h3 { margin: 0 0 6px !important; line-height: 1.15; }
-      p, li      { margin: 0 0 4px !important; line-height: 1.25; }
-      section    { margin: 0 0 8px !important; }
-      ul         { padding-left: 16px !important; }
-
-      .card, .shadow, .elev, .container { box-shadow: none !important; }
-      .sticky, .fixed, header, footer    { position: static !important; }
-
-      .row, .grid {
-        align-items: flex-start !important;
-      }
+  
+      /* Tighter rhythm */
+      h1, h2, h3 { margin: 0 0 6px; line-height: 1.15; }
+      p, li      { margin: 0 0 4px; line-height: 1.22; }
+      .section   { margin: 8px 0; }
+  
+      /* Avoid mid-element splits, but don’t force page 1 to be blank */
+      * { page-break-inside: avoid; break-inside: avoid; }
     }
+
 
     body::before {
         content: "";
