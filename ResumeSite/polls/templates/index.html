@@ -6,6 +6,31 @@
     <title>Resume</title>
 </head>
 <style>
+
+    @media print {
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            page-break-before: avoid;
+            page-break-after: avoid;
+            page-break-inside: avoid;
+        }
+
+        * {
+            page-break-inside: avoid !important;
+        }
+
+        @page {
+            size: A4;  
+            margin: 0;    
+        }
+    }
+
+
     body::before {
         content: "";
         position: fixed;
