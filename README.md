@@ -1,0 +1,1 @@
+This repository is generated to host my HTML Resume content for easy formatting, readability, and website deployment.
