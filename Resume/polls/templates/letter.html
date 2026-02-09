@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cover Letter - Stefan J20</title>
+  <style>
+    @media print {
+      /* Paper */
+      @page {
+        size: Letter;          /* change to A4 if needed */
+        margin: 0.35in;
+      }
+
+      /* Reset screen-only layout that causes extra pages */
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+        height: auto !important;
+      }
+      body {
+        min-height: auto !important;          /* undo min-height:100vh */
+        background: #cdcdcd !important;       /* gray page background */
+        -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+        /* DO NOT use flex here; it can create an empty first page */
+      }
+
+      /* Hide the screen background layers on print */
+      body::before, .blur-bg { display: none !important; }
+
+      /* Recompute layout smaller so it fits one sheet */
+      html { zoom: 0.67; }                    /* tweak 0.90 → 0.88/0.86 if needed */
+
+      /* The resume "card" */
+      .resume-container {
+        width: 7.8in;                         /* 8.5 - (0.35*2) = 7.8in printable */
+        max-width: none !important;
+        margin: 0 auto !important;            /* center horizontally */
+        padding: 0.30in 0.30in;
+        box-shadow: none !important;
+        background: #fff !important;
+        break-before: avoid !important;       /* prevent blank first page */
+        page-break-before: avoid !important;
+      }
+
+      /* Tighter rhythm */
+      h1, h2, h3 { margin: 0 0 6px; line-height: 1.15; }
+      p, li      { margin: 0 0 4px; line-height: 1.22; }
+      .section   { margin: 8px 0; }
+
+      /* Avoid mid-element splits, but don’t force page 1 to be blank */
+      * { page-break-inside: avoid; break-inside: avoid; }
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100vw; height: 100vh;
+      background-color: #cdcdcd;
+      background-size: cover;
+      z-index: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      filter: none;
+      position: relative;
+    }
+
+    .blur-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100vw; height: 100vh;
+      background: inherit;
+      filter: blur(8px) brightness(0.7);
+      z-index: 0;
+    }
+
+    .resume-container {
+      position: relative;
+      z-index: 1;
+      max-width: 80%;
+      max-height: auto;
+      margin: 60px auto;
+      background: rgba(255,255,255,0.92);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      padding: 40px 32px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #111;
+    }
+
+    .resume-header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .resume-header h1 {
+      margin: 0;
+      font-size: 2.2em;
+      letter-spacing: 1px;
+    }
+    .resume-header p {
+      margin: 4px 0 0 0;
+      color: #555;
+      font-size: 1.1em;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .parWrapper {
+      position: relative;
+      padding-left: 0.5in;
+      padding-right: 0.5in;
+    }
+
+    .section-title {
+      font-weight: 600;
+      color: #2d3a4a;
+      margin-bottom: 8px;
+      font-size: 1.15em;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 2px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .section p {
+      margin: 0 0 10px 0;
+      line-height: 1.4;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+      color: #555;
+      font-size: 0.98em;
+    }
+    .meta-pill {
+      background: #e3eafc;
+      color: #2d3a4a;
+      border-radius: 12px;
+      padding: 4px 12px;
+      font-size: 0.98em;
+      display: inline-block;
+    }
+
+    .letter-head {
+      align-items: baseline;
+      gap: 16px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    .letter-date {
+      color: #888;
+      font-size: 0.95em;
+      white-space: nowrap;
+    }
+    .to-line {
+      color: #555;
+      font-size: 0.98em;
+    }
+
+    .closing {
+      margin-top: 14px;
+    }
+
+    a { color: #2d3a4a; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+
+<body style="display: flex; justify-content: center; align-items: center;">
+  <div class="blur-bg"></div>
+
+  <div class="resume-container">
+    <div class="resume-header">
+      <h1>Stefan Juganu</h1>
+      <p>Computer Science Student • Backend Systems • ML Infrastructure</p>
+
+      <div class="meta-row">
+        <span class="meta-pill">Woodland Hills, Los Angeles, CA</span>
+        <span class="meta-pill"><a href="https://github.com/StefanJ20" target="_blank" rel="noopener noreferrer">github.com/StefanJ20</a></span>
+        <span class="meta-pill"><a href="https://BackendForums.onrender.com" target="_blank" rel="noopener noreferrer">BackendForums.onrender.com</a></span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Cover Letter</div>
+      <div class="letter-head">
+        <div class="to-line">
+          Dear Hiring Manager
+        </div>
+      </div>
+      <hr style="opacity: 0.35; width: 60%;">
+      <div class="parWrapper">
+        <p class="paragraphs">
+          I’m a Computer Science student at California State University, Northridge (GPA 3.6, expected graduation Spring 2027)
+          focused on building backend systems and deploying ML capabilities into real applications. I’m applying for a software
+          engineering internship where I can contribute to building reliable services, APIs, and systems that actually ship.
+        </p>
+
+        <p class="paragraphs">
+          I’ve designed and deployed a full-stack Django forum platform backed by MySQL and a custom HTML/JavaScript/CSS frontend.
+          The product supports authenticated users, profiles, posts, comments, and interactive discussions, and it’s deployed publicly
+          for end-to-end testing and iteration in a production-like environment.
+        </p>
+
+        <p class="paragraphs">
+          I’m also building a self-hosted LLM integration project that runs an open-source Qwen model locally using PyTorch and Hugging Face
+          Transformers. The system is designed to reduce reliance on third-party APIs and strengthen data privacy by keeping inference on local
+          GPU hardware, including constrained VRAM environments. I built a Django backend to manage authentication, prompt handling, and inference
+          requests, and I evaluated tradeoffs across model size, compute constraints, and response latency to keep responses predictable.
+        </p>
+
+        <p class="paragraphs">
+          Beyond projects, I’m an active member of CSUN Layer 8, where I participate in hands-on labs and CTFs focused on security practices and
+          safe system design. I bring a backend-first mindset: careful data modeling, clean API contracts, authentication correctness, and deployment
+          discipline.
+        </p>
+
+        <p class="paragraphs">
+          I’d welcome the opportunity to discuss how I can contribute to your team. Thank you for your time and consideration.
+        </p>
+      </div>
+
+      <div class="closing">
+        <p style="margin:0; position: relative; display: flex; justify-content: center; text-align: center;">Sincerely,</p>
+        <p style="margin:0; position: relative; display: flex; justify-content: center; text-align: center;"><strong>Stefan Juganu</strong></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
